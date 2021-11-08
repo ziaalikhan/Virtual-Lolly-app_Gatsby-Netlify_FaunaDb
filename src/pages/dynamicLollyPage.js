@@ -3,8 +3,8 @@ import Lolly from "../components/Lolly";
 
 
 export default function DynamicLollyPage({ pageContext }) {
-    const url = window.location.href;
-    // console.log(pageContext)
+  console.log(pageContext)
+ 
   return (
     <div>
       <h5 className="sharableLinkContainer">Your sharable link: </h5>

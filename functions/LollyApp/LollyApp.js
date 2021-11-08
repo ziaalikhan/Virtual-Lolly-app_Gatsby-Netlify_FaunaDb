@@ -10,6 +10,7 @@ const client = new faunadb.Client({
   domain: "db.us.fauna.com",
 });
 
+
 const typeDefs = gql`
   type Query {
     hello: String
@@ -36,7 +37,6 @@ const typeDefs = gql`
     ): Lolly
   }
 `;
-
 const resolvers = {
   Query: {
     hello: () => {

@@ -7,12 +7,9 @@ module.exports = {
         {
             resolve: `gatsby-source-graphql`,
             options: {
-              typeName: `GitHub`,
-              fieldName: `github`,
-              url: `https://api.github.com/graphql`,
-              headers: {
-                Authorization: `Bearer your-github-token`,
-              },
+              typeName: "GSG",        
+              fieldName: "Lolly",       
+              url: "https://vriual-lolly-gatsby.netlify.app/.netlify/functions/LollyApp",
             },
           },
          

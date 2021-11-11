@@ -19,8 +19,8 @@ export default function dynamic() {
                 <h2 className={styles.share}>Share This Link With Friends <span className={styles.downArrow}>☟</span> </h2>
                 <h2>{url}</h2>
                 <h2><span className={styles.hey}>Welcome</span>  {recive}</h2>
-                <h2>Message : {message}</h2>
-                <h2>From : {sender}</h2>
+                <h2>Message: {message}</h2>
+                <h2>From: {sender}</h2>
                 <h2 className={styles.anotherLolly} onClick={()=> navigate('/')}>Create Another Lolly</h2>
                 </div>
 

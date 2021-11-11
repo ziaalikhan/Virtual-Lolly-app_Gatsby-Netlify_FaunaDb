@@ -5,7 +5,8 @@ import { useQuery, useMutation } from "@apollo/client";
 import gql from "graphql-tag";
 import shortid from "shortid";
 import { navigate } from 'gatsby'
-import ShowLolly from '../pages/ShowLolly';
+
+
 
 const LoolyAppData = gql`
   {

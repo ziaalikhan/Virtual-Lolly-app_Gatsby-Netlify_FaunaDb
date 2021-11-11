@@ -10,7 +10,6 @@ const client = new faunadb.Client({
   domain: "db.us.fauna.com",
 });
 
-
 const typeDefs = gql`
   type Query {
     hello: String
@@ -21,6 +20,7 @@ const typeDefs = gql`
     message: String!
     sender: String!
     color1: String!
+    
     color2: String!
     color3: String!
     lollyPath: String!
@@ -37,12 +37,13 @@ const typeDefs = gql`
     ): Lolly
   }
 `;
+
 const resolvers = {
   Query: {
     hello: () => {
       return "Hello, Lolly!";
     },
-    getLollyByPath: async (_, args) => {
+    getLollyByPath: async (_, { args }) => {
       const result = await client.query(q.Get(q.Match(q.Index("data"), args)));
       return result.data;
     },
@@ -54,6 +55,7 @@ const resolvers = {
           data: args,
         })
       );
+      console.log('result===>>>', result.data)
       return result.data;
     },
   },
@@ -65,5 +67,4 @@ const server = new ApolloServer({
 });
 
 const handler = server.createHandler();
-
 module.exports = { handler };

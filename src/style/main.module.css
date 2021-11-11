@@ -1,5 +1,6 @@
 body {
   background-color: #21212b;
+  font-family: cursive;
 }
 
 .loader_Container {
@@ -74,7 +75,6 @@ body {
 .mainAppContainer {
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
 }
 .mainContainer {
@@ -129,30 +129,37 @@ body {
   color: #d52358;
 }
 
-.result {
+.getDAta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10%;
+}
+.share {
+  text-align: center;
+  color: #e412a1 !important;
+  font-family: cursive;
+}
+.desc {
+  border: 1px solid #e412a1;
+  border-radius: 20px;
+  box-shadow: 0 0 6px #e412a1;
+  margin-left: 30px;
+  padding: 20px;
+}
+.desc >h2{
   color: white;
-  padding: 40px;
-  border: 2px solid #d52358;
-  box-shadow: 0 0 10px #d52358;
-  border-radius: 15px;
+  font-size: 18px;
 }
-
-.anotherLollyCont {
-  margin-top: 50px;
+.downArrow {
+  font-size: 35px;
+  color: white !important;
 }
-
-.anotherLoly {
-  text-decoration: none;
-  color: #d52358;
-  font-size: 20px;
-  font-weight: bold;
-  font-family: cursive;
+.hey {
+  color: #e412a1 !important;
 }
-
-.res_detail {
-  font-family: cursive;
-}
-
-.anotherLoly:hover {
-  border-bottom: 1px solid #d52358;
+.anotherLolly {
+  color: #e412a1 !important;
+  cursor: pointer;
 }

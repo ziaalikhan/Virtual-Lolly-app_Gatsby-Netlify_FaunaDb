@@ -3,7 +3,7 @@ import * as styles from "../style/main.module.css";
 import Lolly from '../components/Lolly';
 import { navigate } from 'gatsby'
 
-export default function dynamic() {
+export default function Dynamic() {
     const url = window.location.href;
     let sender = localStorage.getItem("snd");
     let recive = localStorage.getItem("rcv");

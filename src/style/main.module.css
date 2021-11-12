@@ -52,7 +52,7 @@ body {
   border-radius: 30px;
   outline: none;
   border: none;
-  background-color: #780e56;
+  background-color: #4b36c4;
   color: white;
   font-size: 20px;
   cursor: pointer;
@@ -60,7 +60,7 @@ body {
 
 .firstPageBtn > button:hover {
   background-color: white;
-  color: #780e56;
+  color: #4b36c4;
 }
 .heading {
   text-align: center;
@@ -90,8 +90,23 @@ body {
   flex-direction: column;
   justify-content: space-around;
 }
+input[type='color'] {
+  padding: 0;
+  width: 150%;
+  height: 150%;
+  margin: -25%;
+}
 
-.colorSearch {
+.cp_wrapper {
+  overflow: hidden;
+  width: 2em;
+  height: 2em;
+  /* optional formatting below here */
+  border-radius: 50%;
+  box-shadow: 1px 1px 3px 0px grey;
+  margin: 1em;
+}
+/* .colorSearch {
   width: 60px;
   height: 60px;
   overflow: hidden;
@@ -99,7 +114,7 @@ body {
   outline: none;
   margin-top: -20px;
   margin-left: -20px;
-}
+} */
 
 .allInputs {
   display: flex;
@@ -112,13 +127,13 @@ body {
 .allInputs > * {
   margin: 10px 0;
   padding: 15px 15px;
-  border: 2px solid #d52358;
+  border: 2px solid #4b36c4;
   border-radius: 5px;
   outline: none;
 }
 .sndBtn {
   border-radius: 30px;
-  background-color: #d52358;
+  background-color: #4b36c4;
   color: white;
   font-size: 16px;
   cursor: pointer;
@@ -138,13 +153,13 @@ body {
 }
 .share {
   text-align: center;
-  color: #e412a1 !important;
+  color: #4b36c4 !important;
   font-family: cursive;
 }
 .desc {
-  border: 1px solid #e412a1;
+  border: 1px solid #4b36c4;
   border-radius: 20px;
-  box-shadow: 0 0 6px #e412a1;
+  box-shadow: 0 0 6px white;
   margin-left: 30px;
   padding: 20px;
 }
@@ -157,9 +172,9 @@ body {
   color: white !important;
 }
 .hey {
-  color: #e412a1 !important;
+  color: #4b36c4 !important;
 }
 .anotherLolly {
-  color: #e412a1 !important;
+  color: #4b36c4 !important;
   cursor: pointer;
 }

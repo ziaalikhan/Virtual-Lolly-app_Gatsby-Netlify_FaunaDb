@@ -4,9 +4,7 @@ import * as styles from "../style/main.module.css";
 import { useQuery, useMutation } from "@apollo/client";
 import gql from "graphql-tag";
 import shortid from "shortid";
-import { navigate } from 'gatsby'
-
-
+import { navigate } from 'gatsby';
 
 const LoolyAppData = gql`
   {
@@ -117,24 +115,31 @@ export default function App() {
           <Lolly top={color1} middle={color2} bottom={color3} />
           <>
             <div className={styles.Colors_input}>
-              <input
-                className={styles.colorSearch}
-                type="color"
-                value={color1}
-                onChange={(e) => setcolor1(e.target.value)}
-              />
-              <input
-                className={styles.colorSearch}
-                type="color"
-                value={color2}
-                onChange={(e) => setcolor2(e.target.value)}
-              />
-              <input
-                className={styles.colorSearch}
-                type="color"
-                value={color3}
-                onChange={(e) => setcolor3(e.target.value)}
-              />
+              <div class={styles.cp_wrapper}>
+                <input
+                  className={styles.colorSearch}
+                  type="color"
+                  value={color1}
+                  onChange={(e) => setcolor1(e.target.value)}
+                />
+              </div>
+              <div class={styles.cp_wrapper}>
+                <input
+                  className={styles.colorSearch}
+                  type="color"
+                  value={color2}
+                  onChange={(e) => setcolor2(e.target.value)}
+                />
+              </div>
+              <div class={styles.cp_wrapper}>
+                <input
+                  className={styles.colorSearch}
+                  type="color"
+                  value={color3}
+                  onChange={(e) => setcolor3(e.target.value)}
+                />
+              </div>
+
             </div>
             <div className={styles.allInputs}>
               To :

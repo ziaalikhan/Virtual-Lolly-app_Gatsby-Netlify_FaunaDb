@@ -20,7 +20,6 @@ const typeDefs = gql`
     message: String!
     sender: String!
     color1: String!
-    
     color2: String!
     color3: String!
     lollyPath: String!

@@ -3,5 +3,14 @@
   functions = "functions"
   publish = "public"
 
+[[headers]]
+  for = "/*"
+  [headers.values]
+	cache-control = '''
+	max-age=0,
+	no-cache,
+	no-store,
+	must-revalidate'''
+
 [[plugins]]
-  package = "@netlify/plugin-functions-install-core"  
+  package = "@netlify/plugin-functions-install-core" 

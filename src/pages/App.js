@@ -45,7 +45,6 @@ const ADD_LOLLYDATA = gql`
 export default function App() {
 
   // const url = window.location.href;
-
   const { loading, error } = useQuery(LoolyAppData);
   const [createLolly] = useMutation(ADD_LOLLYDATA);
   // console.log('DATA=============>>>',data);
@@ -83,6 +82,7 @@ export default function App() {
       localStorage.setItem('c2', result.data.createLolly.color2);
       localStorage.setItem('c3', result.data.createLolly.color3);
       localStorage.setItem('message', result.data.createLolly.message);
+      localStorage.setItem('path', result.data.createLolly.lollyPath);
       // Navigate To Dynamic Page
       navigate(`/my-dynamic?id=${result.data.createLolly.lollyPath}`);
 

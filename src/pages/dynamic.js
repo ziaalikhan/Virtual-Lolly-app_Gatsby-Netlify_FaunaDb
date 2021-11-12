@@ -24,10 +24,11 @@ export default function Dynamic({url , msg , res , from}) {
     // let c1 = localStorage.getItem("c1");
     // let c2 = localStorage.getItem("c2");
     // let c3 = localStorage.getItem("c3");
+    // 🚀
     return (
         <div>
             <div className="result">
-              <h4>Share lolly with this link:</h4>
+              <h4>Share lolly with this link </h4>
               <h3>{`${url}`}</h3>
               <div className="res_detail">
                 <p className="to">Hello : {res}</p>

@@ -8,7 +8,6 @@ import Link from 'gatsby';
 import { navigate } from 'gatsby';
 
 
-
 const ADD_LOLLYDATA = gql`
   mutation createLolly(
     $color1: String! , $color2: String! , $color3: String! , $resciever: String! , $message: String! , $sender: String! , $lollyPath: String!) {
@@ -145,7 +144,6 @@ export default function App() {
                 </button>
               </div>
             </>
-
         </div>
       </div>
     </div>

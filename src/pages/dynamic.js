@@ -14,7 +14,6 @@ export default function Dynamic() {
     let c3 = localStorage.getItem("c3");
     return (
         <div>
-
             <div className={styles.getDAta}>
                 <Lolly top={c1} middle={c2} bottom={c3} />
                 <div className={styles.desc}>

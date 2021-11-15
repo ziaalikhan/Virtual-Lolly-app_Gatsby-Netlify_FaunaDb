@@ -4,36 +4,15 @@ import * as styles from "../style/main.module.css";
 import { useQuery, useMutation } from "@apollo/client";
 import gql from "graphql-tag";
 import shortid from "shortid";
-import Dynamic from '../pages/dynamic';
 import Link from 'gatsby';
 import { navigate } from 'gatsby';
 
 
-const LoolyAppData = gql`
-  {
-    hello
-  }
-`;
 
 const ADD_LOLLYDATA = gql`
   mutation createLolly(
-    $color1: String!
-    $color2: String!
-    $color3: String!
-    $resciever: String!
-    $message: String!
-    $sender: String!
-    $lollyPath: String!
-  ) {
-    createLolly(
-      color1: $color1
-      color2: $color2
-      color3: $color3
-      resciever: $resciever
-      message: $message
-      sender: $sender
-      lollyPath: $lollyPath
-    ) {
+    $color1: String! , $color2: String! , $color3: String! , $resciever: String! , $message: String! , $sender: String! , $lollyPath: String!) {
+    createLolly( color1: $color1 , color2: $color2 , color3: $color3 , resciever: $resciever , message: $message , sender: $sender , lollyPath: $lollyPath) {
       color1
       color2
       color3
@@ -47,10 +26,7 @@ const ADD_LOLLYDATA = gql`
 
 export default function App() {
 
-  // const url = window.location.href;
-  const { loading, error } = useQuery(LoolyAppData);
-  const [createLolly, { data }] = useMutation(ADD_LOLLYDATA);
-  // console.log('DATA=============>>>',data);
+  const [createLolly , { loading, error }] = useMutation(ADD_LOLLYDATA);
 
   // colors Input //
   const [color1, setcolor1] = useState("#d52358");
@@ -79,15 +55,15 @@ export default function App() {
         },
       });
       // LocalStorage
-      // localStorage.setItem('snd', result.data.createLolly.sender);
-      // localStorage.setItem('rcv', result.data.createLolly.resciever);
-      // localStorage.setItem('c1', result.data.createLolly.color1);
-      // localStorage.setItem('c2', result.data.createLolly.color2);
-      // localStorage.setItem('c3', result.data.createLolly.color3);
-      // localStorage.setItem('message', result.data.createLolly.message);
-      // localStorage.setItem('path', result.data.createLolly.lollyPath);
+      localStorage.setItem('snd', result.data.createLolly.sender);
+      localStorage.setItem('rcv', result.data.createLolly.resciever);
+      localStorage.setItem('c1', result.data.createLolly.color1);
+      localStorage.setItem('c2', result.data.createLolly.color2);
+      localStorage.setItem('c3', result.data.createLolly.color3);
+      localStorage.setItem('message', result.data.createLolly.message);
+      localStorage.setItem('path', result.data.createLolly.lollyPath);
       // Navigate To Dynamic Page
-      // navigate(`/my-dynamic?id=${result.data.createLolly.lollyPath}`)
+      navigate(`/dynamic?id=${result.data.createLolly.lollyPath}`)
     } else {
       alert("The Inputs Values Are Empty Please Fill It First!");
     }
@@ -115,7 +91,7 @@ export default function App() {
       <div className={styles.mainAppContainer}>
         <div className={styles.mainContainer}>
           <Lolly top={color1} middle={color2} bottom={color3} />
-          {!data ? (
+   
             <>
               <div className={styles.Colors_input}>
                 <div class={styles.cp_wrapper}>
@@ -169,29 +145,6 @@ export default function App() {
                 </button>
               </div>
             </>
-          ) : (
-            <>
-              <Dynamic
-                url={data.createLolly.lollyPath}
-                res={data.createLolly.resciever}
-                msg={data.createLolly.message}
-                from={data.createLolly.sender}
-              />
-              {/* {
-                navigate(`/my-dynamic?id=${data.createLolly.lollyPath}`)
-              } */}
-            </>
-            // </Link>
-            // <div className="result">
-            //   <h4>Share lolly with this link:</h4>
-            //   <h3>{`https://vriual-lolly-gatsby.netlify.app/lollies/${data.createLolly.lollyPath}`}</h3>
-            //   <div className="res_detail">
-            //     <p className="to">Hello :{data.createLolly.resciever}</p>
-            //     <p className="message">Message :{data.createLolly.message}</p>
-            //     <p className="from">From :{data.createLolly.sender}</p>
-            //   </div>
-            // </div>
-          )}
 
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState , useEffect , debounce} from 'react';
 import * as styles from "../style/main.module.css";
 import Lolly from '../components/Lolly';
 import { navigate } from 'gatsby';
@@ -47,8 +47,8 @@ export default function Dynamic() {
                     <h2>From: {sender}</h2>
                     <h2 className={styles.anotherLolly} onClick={() => navigate('/')}>Create Another Lolly</h2>
                 </div>
-
+ 
             </div>
         </div>
-    )
+     )
 }

@@ -4,6 +4,28 @@ import Lolly from '../components/Lolly';
 import { navigate } from 'gatsby';
 
 export default function Dynamic() {
+
+    let height;
+    let width;
+
+    if (typeof window !== `undefined`) {
+        height = window.innerHeight
+        width = window.innerWidth
+    }
+    const [dimensions, setDimensions] = useState({
+        windowHeight: height,
+        windowWidth: width,
+    })
+    useEffect(() => {
+        const debouncedHandleResize = debounce(function handleResize() {
+            setDimensions({
+                windowHeight: window.innerHeight,
+                windowWidth: window.innerWidth,
+            });
+        }, 1000);
+        window.addEventListener(`resize`, debouncedHandleResize)
+        return () => window.removeEventListener(`resize`, debouncedHandleResize)
+    }, [])
     let url = window.location.href;
     let sender = localStorage.getItem("snd");
     let recive = localStorage.getItem("rcv");
